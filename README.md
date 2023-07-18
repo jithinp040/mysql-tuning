@@ -68,3 +68,12 @@ Calculate best usage of tmp_table_size with the following steps:
 - A more advanced version of load testing can be acheived with the help of **Sysbench**
 - **Sysbench** provides general testing of DB regarding CPU performance, I/O performance, mutex (mutual exclusion) connection, Memory Speed, thread performance and database performance.
 - [Link to Sysbench Documentation](https://manpages.debian.org/testing/sysbench/sysbench.1.en.html)
+
+## MySQL Profiling:
+- Some of the tools used for profiling include
+1. mysqltuner - Gives recommendations for best settings [Link to website](www.mysqltuner.com)
+2. mysqlreport - Gives record [Link to website](hackmysql.com/mysqlreport)
+3. mk-query-profiler - Gives profiled record of a bunch of SQL statements [Link to website](www.maatkit.org)
+- Some tools to work with slow queries include
+1. mysqldumpslow - Just reads and shows queries which were slow to run
+2. mysqlsla
