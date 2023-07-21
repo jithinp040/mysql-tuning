@@ -31,7 +31,12 @@ Some of the important timeouts to be written in mysql.cnf are: (Not needed for u
 - table name casing is checked for Unix based systems and not for Windows based systems. for replication set the following  **lower_case_table_names=1**  
 ## Other Notes:		
 - We can set up multiple instances (Parallel running)of MySQL server in linux server using mysqld_multi.  
-- Learning about SQL mode options can be helpful for data validation  
+- Learning about SQL mode options can be helpful for data validation
+- Some of the variables for tuning takes up **memory per connection**. Normally MySQL would have 1000 active connections. They are
+	- **join_buffer_size**
+   	- **sort_buffer_size**
+   	- **read_buffer_size**
+   	- **read_rnd_buffer_size** (Regarding bringing out sorted data)
 
 ## For Linux:  
 -  Set open_files_limit present under [mysqld_safe] in my.cnf file to 4096. Sets maximum amount of files openable by Linux.  
@@ -61,6 +66,7 @@ Calculate best usage of tmp_table_size with the following steps:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Use the formula to get ratio on how much data is being written to disk   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```Created_tmp_disk_tables / Created_tmp_tables```    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Having a lower ratio implies that more data is being written to Disk
+- **table_definition_cache** - cache for storing table information data
 
 ## MySQL Load Testing:
 - Load testing of MySQL is possible with the help of an internal tool in mysql called **mysqlslap**. The help file can be viewed using the following command  
